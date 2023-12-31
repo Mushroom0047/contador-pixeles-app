@@ -1,30 +1,24 @@
-import { useState } from "react";
 
-const InputImage = () => {
-    const [selectedFile, setSelectedFile] = useState(null);
+
+const InputImage = ({ onFileChange }) => {
 
     const handleFileChange = (event) => {
       const file = event.target.files[0];      
       if (file && file.type === 'image/png') {
-        setSelectedFile(file);
+        onFileChange(file);
       } else {
-        setSelectedFile(null);
+        onFileChange(null);
       }
     };
   
     return (
-      <div>
+      <div className="container mx-auto text-center py-14">
         <h2>Suelta el archivo aquí</h2>
         <input
           type="file"
           accept=".png"
           onChange={handleFileChange}
-        />
-        {selectedFile && (
-          <div>
-            <p>Archivo seleccionado: {selectedFile.name}</p>        
-          </div>
-        )}
+        />        
       </div>
     );
 }
