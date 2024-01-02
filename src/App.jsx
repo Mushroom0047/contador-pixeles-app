@@ -12,7 +12,7 @@ const App = () => {
     return (
         <>
             <InputImage onFileChange={handleFileChange} />
-            <section className=" bg-red-200 container mx-auto">
+            <section className="container mx-auto">
                 <div className="w-full flex flex-row flex-wrap justify-center text-center">
                     <div className="w-full lg:w-1/2">
                         <ImageRender selectedFile={selectedFile} />

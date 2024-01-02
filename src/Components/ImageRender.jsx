@@ -68,7 +68,6 @@ const ImageRender = ({ selectedFile }) => {
                 </div>                
             )}
             <div>
-                <h2>Conteo de colores:</h2>
                 <DataTable colorData={colors} />
             </div>
         </div>
