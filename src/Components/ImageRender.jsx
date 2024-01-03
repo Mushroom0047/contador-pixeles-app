@@ -39,12 +39,14 @@ const ImageRender = ({ selectedFile }) => {
                               }
                   
                               var colorHex = "#" + rgbToHex(pixel[0]) + rgbToHex(pixel[1]) + rgbToHex(pixel[2]);
-                  
-                              if (colorCounts[colorHex]) {
-                                colorCounts[colorHex]++;
-                              } else {
-                                colorCounts[colorHex] = 1;
+                              if(colorHex !== '#000000'){
+                                  if (colorCounts[colorHex]) {
+                                    colorCounts[colorHex]++;
+                                  } else {
+                                    colorCounts[colorHex] = 1;
+                                  }
                               }
+                              
                             }
                           }
     

@@ -4,7 +4,6 @@ import InputImage from "./Components/InputImage"
 
 
 const App = () => {
-    // const canvasRef = useRef(null);
     const [selectedFile, setSelectedFile] = useState(null);
     const handleFileChange = (file) => {
         setSelectedFile(file);
@@ -12,7 +11,7 @@ const App = () => {
     return (
         <>
             <InputImage onFileChange={handleFileChange} />
-            <section className="container mx-auto">
+            <section className="mx-auto">
                 <div className="w-full flex flex-row flex-wrap justify-center text-center">
                     <div className="w-full lg:w-1/2">
                         <ImageRender selectedFile={selectedFile} />
