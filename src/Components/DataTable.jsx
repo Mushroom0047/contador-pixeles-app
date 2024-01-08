@@ -1,7 +1,7 @@
 // import getRgbaPalette from 'get-rgba-palette';
 import PropTypes from 'prop-types';
 import InputColors from './InputColors';
-import { Card } from '@material-tailwind/react';
+import { Button, Card } from '@material-tailwind/react';
 
 const DataTable = ({ colorData }) => {
   const arrayColors = Object.entries(colorData);
@@ -9,7 +9,7 @@ const DataTable = ({ colorData }) => {
 
   return (
     <section className='w-full my-4'>
-      <h2 className="text-lg font-semibold mb-4">Tabla de Valores</h2>
+      <h2 className="text-lg font-semibold mb-4">Tabla de Colores</h2>
       <Card className="h-full w-full px-2 py-2">
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
@@ -27,9 +27,9 @@ const DataTable = ({ colorData }) => {
           <tbody>
             {arrayColors.map(([color, cantidad], index) => (
               <tr key={index}>
-                <td style={{ backgroundColor: color, width: '50px', height: '50px' }}></td>
+                <td className='w-12 h-12' style={{ backgroundColor: color}}></td>
                 <td>{color}</td>
-                <td className='w-6'>{cantidad}</td>
+                <td>{cantidad}</td>
                 <InputColors />
               </tr>
             ))}
@@ -38,6 +38,9 @@ const DataTable = ({ colorData }) => {
             </tr>
           </tbody>
         </table>
+        <div className='py-6'>
+        <Button size="md">Guardar</Button>
+        </div>
       </Card>
     </section>
   )

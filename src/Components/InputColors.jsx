@@ -10,17 +10,17 @@ const InputColors = () => {
     }
     return (
         <>
-            <td className="w-auto">
+            <td>
                 <Input                         
-                    variant='outline'
+                    variant='outlined'
                     type='number'
                     min="0"
                     max={arrColores.length - 1}
                     value={inputValue}
-                    onChange={handleInputValue}
+                    onChange={handleInputValue}                
                 />
             </td>
-            <td className="w-auto">
+            <td>
                 <Input
                     variant='standard'
                     type='text'
